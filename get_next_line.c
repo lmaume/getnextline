@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:02:30 by lmaume            #+#    #+#             */
-/*   Updated: 2024/02/14 16:38:20 by lmaume           ###   ########.fr       */
+/*   Updated: 2024/02/28 18:27:29 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,10 @@ char	*get_next_line(int fd)
 			return (NULL);
 		}
 	}
-	line = ft_strjoin(line, buffer, ft_linelen(buffer));
+	if (line != NULL)
+		line = ft_strjoin(line, buffer, ft_linelen(buffer));
+	else
+		line = ft_strldup(buffer, ft_linelen(buffer));
 	ft_memcpy(buffer, ft_strchr(buffer, '\n') + 1, \
 		ft_strlen(ft_strchr(buffer, '\n')));
 	return (line);

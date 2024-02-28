@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:01:42 by lmaume            #+#    #+#             */
-/*   Updated: 2024/02/14 16:41:49 by lmaume           ###   ########.fr       */
+/*   Updated: 2024/02/28 18:00:01 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, void *src, size_t n);
 char	*ft_strjoin(char *s1, char *s2, size_t len);
 char	*ft_strchr(char *s, int c);
-char	*ft_strdup(char *s);
+char	*ft_strldup(char *s, size_t len);
 
 #endif
