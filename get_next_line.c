@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:02:30 by lmaume            #+#    #+#             */
-/*   Updated: 2024/02/28 18:27:29 by lmaume           ###   ########.fr       */
+/*   Updated: 2024/02/29 16:46:09 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,8 @@ char	*get_next_line(int fd)
 		result = read(fd, buffer, BUFFER_SIZE);
 		if (result == 0)
 			return (line);
-		else if (result < 0)
-		{
-			free(line);
-			return (NULL);
-		}
+		else if (result < 0 || !line)
+			return (free(line), NULL);
 	}
 	if (line != NULL)
 		line = ft_strjoin(line, buffer, ft_linelen(buffer));

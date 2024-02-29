@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:00:00 by lmaume            #+#    #+#             */
-/*   Updated: 2024/02/28 18:04:11 by lmaume           ###   ########.fr       */
+/*   Updated: 2024/02/29 16:11:16 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,11 @@ char	*ft_strldup(char *s, size_t len)
 {
 	char	*s2;
 
-	s2 = malloc(ft_strlen(s) + 1);
+	s2 = malloc(len + 2);
 	if (s2 == NULL)
 		return (NULL);
 	ft_memcpy(s2, s, len + 1);
+	s2[len + 1] = '\0';
 	return (s2);
 }
 
