@@ -6,17 +6,20 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:01:42 by lmaume            #+#    #+#             */
-/*   Updated: 2024/02/28 18:00:01 by lmaume           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:20:48 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 12
 # endif
+
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);

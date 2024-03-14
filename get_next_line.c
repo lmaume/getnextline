@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:02:30 by lmaume            #+#    #+#             */
-/*   Updated: 2024/02/29 16:46:09 by lmaume           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:21:00 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ char	*get_next_line(int fd)
 		ft_bzero(buffer, BUFFER_SIZE);
 		result = read(fd, buffer, BUFFER_SIZE);
 		if (result == 0)
-			return (line);
-		else if (result < 0 || !line)
+			break ;
+		if (result < 0 || !line)
 			return (free(line), NULL);
 	}
 	if (line != NULL)
